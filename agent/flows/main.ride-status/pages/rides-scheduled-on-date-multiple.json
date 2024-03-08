@@ -1,0 +1,32 @@
+{
+  "name": "c106e339-17a5-45de-a3b3-f5c3b5ab6d1a",
+  "displayName": "rides-scheduled-on-date-multiple",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "It looks like you have $sys.func.COUNT($flow.filtered-rides) rides scheduled for $sys.func.FORMAT_DATE($flow.ride-date, \"EEEE, MMMM dd\")." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nIt looks like you have $sys.func.COUNT($flow.filtered-rides) rides scheduled for $sys.func.FORMAT_DATE($flow.ride-date, \"EEEE, MMMM dd\").\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.ride-index",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "read-ride-number-loop",
+    "name": "9d01fc99-89ba-4757-a703-26911bdcd2cb"
+  } ]
+}

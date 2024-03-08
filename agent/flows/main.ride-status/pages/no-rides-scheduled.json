@@ -1,0 +1,31 @@
+{
+  "name": "361adb71-38c8-4776-9969-9af42405e605",
+  "displayName": "no-rides-scheduled",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "I'm sorry, I don't see any confirmed rides scheduled for you." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nI'm sorry, I don't see any confirmed rides scheduled for you.\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "ride-outcome",
+        "value": "success"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "5aa19115-23b8-42e6-a88c-6ebccece17af"
+  } ]
+}

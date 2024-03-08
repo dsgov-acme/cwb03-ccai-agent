@@ -1,0 +1,29 @@
+{
+  "name": "892a5258-f847-46c1-a467-b631466918f1",
+  "displayName": "flow.goodbye",
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "goodbye-message",
+    "name": "1e9aa0d3-4fcc-4d6b-83da-f7cc36a025e5"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "259165b0-6645-4a8a-a188-2b0eb50c35b0"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "35b28c25-56ae-4881-929c-d043a32d9752"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  }
+}

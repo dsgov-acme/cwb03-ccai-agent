@@ -1,0 +1,25 @@
+{
+  "name": "e6dc93a9-39b4-40a9-b147-a2fa41662810",
+  "displayName": "no-input-router",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.more-time-count = null OR $session.params.more-time-expired = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-no-input",
+        "value": true
+      } ]
+    },
+    "targetPage": "no-match-router",
+    "name": "cbaf5b57-246e-4186-8172-bf54560c4981"
+  }, {
+    "condition": "$session.params.more-time-count != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "more-time-handler",
+    "name": "db35e81f-6d0b-41a9-901f-2d9463c72fda"
+  } ]
+}

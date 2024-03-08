@@ -1,0 +1,25 @@
+{
+  "name": "5fd99f17-9d48-4c22-b206-6b1711024b8c",
+  "displayName": "system-error",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "smalltalk",
+        "value": "system-error"
+      } ]
+    },
+    "targetFlow": "common.smalltalk",
+    "name": "87e02389-25cd-404e-895f-8b913b01a011"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "flow.goodbye",
+    "name": "6c992f60-e704-4b02-b30d-2a3c81f7fe65"
+  } ]
+}

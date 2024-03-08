@@ -1,0 +1,40 @@
+{
+  "name": "e743560d-aa25-4bbb-b1a9-2faf1edda9c4",
+  "displayName": "collect-rider-id",
+  "form": {
+    "parameters": [ {
+      "displayName": "data-collection-rider-id",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "targetPage": "no-match-router",
+          "event": "sys.no-match-default",
+          "triggerFulfillment": {
+          
+          },
+          "name": "17aac335-b056-440a-acb5-0eb740717a0b"
+        }, {
+          "targetPage": "no-input-router",
+          "event": "sys.no-input-default",
+          "triggerFulfillment": {
+          
+          },
+          "name": "1b14f856-f832-47cd-9473-a49d2e0139b3"
+        } ]
+      },
+      "redact": true,
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "maxDigits": 9,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "transitionRouteGroups": [ "data-collection" ]
+}

@@ -1,0 +1,55 @@
+{
+  "name": "b638fe65-30ce-48c9-979c-cb1b9869bd6c",
+  "displayName": "update",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Just making sure, do you want to cancel a ride?" ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nJust making sure, do you want to cancel a ride?\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-type",
+        "value": "yes-no"
+      } ]
+    },
+    "targetFlow": "common.data-collection",
+    "name": "8aa37dba-1005-459f-98f2-4431950cc8e4"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"success\" AND $session.params.data-collection-yes-no = \"yes\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "ride-request",
+        "value": "update"
+      }, {
+        "parameter": "ride-outcome",
+        "value": "success"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "9cd30c6b-0628-437a-b6ec-4aef0296532e"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"success\" AND $session.params.data-collection-yes-no = \"no\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "ride-outcome",
+        "value": "cancel"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "58ae6e6e-5947-4861-ac6d-6c4ad9eeeb96"
+  } ],
+  "transitionRouteGroups": [ "faq.ride" ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "3d78d173-217d-4770-a023-b562b3e436cd",
+  "displayName": "required-failed-error-handler",
+  "transitionRoutes": [ {
+    "condition": "$session.params.data-collection-outcome = \"error\" AND $session.params.data-collection-attempt-count \u003c= $session.params.data-collection-attempts-allowed",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "smalltalk",
+        "value": "required-failed"
+      } ]
+    },
+    "targetFlow": "common.smalltalk",
+    "name": "dd579533-2956-495f-b23d-4079b6d1d972"
+  }, {
+    "condition": "$session.params.data-collection-attempt-count \u003e= $session.params.data-collection-attempts-allowed",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "flow.goodbye",
+    "name": "55d18a7e-58da-4677-ad5a-64fd732fcb20"
+  } ]
+}

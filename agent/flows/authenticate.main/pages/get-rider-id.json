@@ -1,0 +1,52 @@
+{
+  "name": "cf96b42c-57ee-4312-ab91-a0303c43c31e",
+  "displayName": "get-rider-id",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$sys.func.IF(\"$flow.authentication-attempts = 1\", \"Please speak or enter your Rider ID using your telephone keypad.\", \"Please repeat your Rider ID.\")" ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\n$sys.func.IF(\"$flow.authentication-attempts = 1\", \"Please speak or enter your Rider ID using your telephone keypad.\", \"Please repeat your Rider ID.\")\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-type",
+        "value": "rider-id"
+      } ]
+    },
+    "targetFlow": "common.data-collection",
+    "name": "ae4f8090-dbda-4208-b4b2-2682928cdaee"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"success\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.rider-id",
+        "value": "$session.params.data-collection-rider-id"
+      } ]
+    },
+    "targetPage": "rider-id-lookup",
+    "name": "6a5f6a2b-e519-4242-b22e-3dff72466845"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"help\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-rider-id-prompted",
+        "value": null
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "82acb133-e0b6-40dd-a55d-7c347fd3e05a"
+  } ],
+  "transitionRouteGroups": [ "authenticate.main" ]
+}

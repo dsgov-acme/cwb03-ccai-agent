@@ -1,0 +1,109 @@
+{
+  "name": "c27c90be-b3aa-4321-9175-1cf2b011037a",
+  "displayName": "common.data-collection",
+  "transitionRoutes": [ {
+    "condition": "$session.params.data-collection-type = \"rider-id\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-rider-id",
+        "value": null
+      }, {
+        "parameter": "data-collection-outcome",
+        "value": null
+      }, {
+        "parameter": "data-collection-no-input",
+        "value": null
+      } ]
+    },
+    "targetPage": "collect-rider-id-prompt",
+    "name": "1d31d71c-84be-4ddd-91d4-6b9071fa5153"
+  }, {
+    "condition": "$session.params.data-collection-type = \"yes-no\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-yes-no",
+        "value": null
+      }, {
+        "parameter": "data-collection-outcome",
+        "value": null
+      }, {
+        "parameter": "data-collection-no-input",
+        "value": null
+      } ]
+    },
+    "targetPage": "collect-yes-no-prompt",
+    "name": "b04a2672-fc50-4564-97d0-abde6e9c8c68"
+  }, {
+    "condition": "$session.params.data-collection-type = \"any\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-any",
+        "value": null
+      }, {
+        "parameter": "data-collection-outcome",
+        "value": null
+      }, {
+        "parameter": "data-collection-no-input",
+        "value": null
+      } ]
+    },
+    "targetPage": "collect-any-prompt",
+    "name": "79bacfe8-18ad-41c8-80e8-baa4b2ffcca4"
+  }, {
+    "condition": "$session.params.data-collection-type = \"intent\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "collect-intent",
+    "name": "2b045169-af56-4826-8b11-1bc4c34a2a85"
+  }, {
+    "condition": "$session.params.data-collection-type = \"date\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-date",
+        "value": null
+      }, {
+        "parameter": "data-collection-outcome",
+        "value": null
+      }, {
+        "parameter": "data-collection-no-input",
+        "value": null
+      } ]
+    },
+    "targetPage": "collect-date-prompt",
+    "name": "1248a1bb-4962-487e-84ab-9db99ed8c71f"
+  }, {
+    "condition": "$session.params.data-collection-type = \"number\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-number",
+        "value": null
+      }, {
+        "parameter": "data-collection-outcome",
+        "value": null
+      }, {
+        "parameter": "data-collection-no-input",
+        "value": null
+      } ]
+    },
+    "targetPage": "collect-number-prompt",
+    "name": "c1aee4e7-5e01-4c7f-b746-18e63ece3052"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "e601260b-6f18-4c66-bd86-8bdda5c14e0e"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "b28789d8-fb00-469e-a52d-1ec431d8a9fe"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  }
+}

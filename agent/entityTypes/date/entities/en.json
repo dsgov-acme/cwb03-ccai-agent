@@ -1,0 +1,11 @@
+{
+  "entities": [ {
+    "value": "@sys.date:date",
+    "synonyms": [ "@sys.date:date" ],
+    "languageCode": "en"
+  }, {
+    "value": "@sys.date-time:date-time",
+    "synonyms": [ "@sys.date-time:date-time" ],
+    "languageCode": "en"
+  } ]
+}

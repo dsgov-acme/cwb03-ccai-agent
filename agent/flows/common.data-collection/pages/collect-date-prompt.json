@@ -1,0 +1,25 @@
+{
+  "name": "1fa2e18e-be01-415d-9a97-6bdf447bdc3e",
+  "displayName": "collect-date-prompt",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.data-collection-date-prompted != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "collect-date",
+    "name": "2f16b33d-b545-47da-8549-ae39ca6a3755"
+  }, {
+    "condition": "$session.params.data-collection-date-prompted = null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-date-prompted",
+        "value": true
+      } ]
+    },
+    "targetPage": "collect-date",
+    "name": "8cfc1b6a-85cb-4726-a7a8-8902dd4d0ef8"
+  } ]
+}

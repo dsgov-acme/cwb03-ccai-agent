@@ -1,0 +1,28 @@
+{
+  "name": "dac1f0c4-4a19-433c-b95b-a2d4bc48cec2",
+  "displayName": "check-ride-days",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$sys.func.COUNT($flow.scheduled-rides) \u003e 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ask-ride-date",
+    "name": "db70b2dd-8e03-4f49-b599-7a461527659c"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.filtered-rides",
+        "value": "$sys.func.GET_FIELD($sys.func.GET($flow.scheduled-rides, 0), \"rides\")"
+      }, {
+        "parameter": "$flow.ride-date",
+        "value": "$sys.func.GET_FIELD($sys.func.GET($flow.scheduled-rides, 0), \"date\")"
+      } ]
+    },
+    "targetPage": "rides-scheduled-on-date",
+    "name": "3d4bb11c-ec61-4261-94e0-2ee9e929f180"
+  } ]
+}

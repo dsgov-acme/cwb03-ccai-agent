@@ -1,0 +1,37 @@
+{
+  "name": "864908e6-1230-465c-a8e7-f1b6ff1a92ef",
+  "displayName": "read-ride-number-loop",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Ride $sys.func.ADD($flow.ride-index, 1) is scheduled for $sys.func.FORMAT_DATE($sys.func.GET_FIELD($flow.ride, \"pickupTime\"), \"h:mm a\") going from $sys.func.GET_FIELD($flow.ride, \"pickupLocation\") to $sys.func.GET_FIELD($flow.ride, \"dropoffLocation\")." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.ride",
+      "value": "$sys.func.GET($flow.filtered-rides, $flow.ride-index)"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$sys.func.ADD($flow.ride-index, 1) \u003c $sys.func.COUNT($flow.filtered-rides)",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.ride-index",
+        "value": "$sys.func.ADD($flow.ride-index, 1)"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "c29351ad-e3d4-4a33-ae46-270de0282093"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ask-ride-number",
+    "name": "5973ad4f-e4a9-4079-b588-4a7447f1b7fe"
+  } ]
+}

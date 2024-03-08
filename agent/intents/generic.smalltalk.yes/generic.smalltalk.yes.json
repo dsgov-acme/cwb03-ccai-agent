@@ -1,0 +1,13 @@
+{
+  "name": "c3db78c7-a299-449a-99cd-fe51e9dec7f6",
+  "displayName": "generic.smalltalk.yes",
+  "parameters": [ {
+    "id": "yes-no-response",
+    "entityType": "@yes-no-response"
+  }, {
+    "id": "geo-city",
+    "entityType": "@sys.geo-city"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 14
+}

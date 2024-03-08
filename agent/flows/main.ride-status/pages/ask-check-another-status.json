@@ -1,0 +1,54 @@
+{
+  "name": "e90809b7-16b7-4fb2-83fb-4a8cce55a932",
+  "displayName": "ask-check-another-status",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Do you want to check the status of another ride?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-type",
+        "value": "yes-no"
+      } ]
+    },
+    "targetFlow": "common.data-collection",
+    "name": "c7f95049-e42f-4758-abde-45d98c5d4b9d"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"success\" AND $session.params.data-collection-yes-no = \"yes\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check-ride-days",
+    "name": "3a40e96f-7bda-4547-ae80-4348e586af2c"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"success\" AND $session.params.data-collection-yes-no = \"no\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "ride-outcome",
+        "value": "success"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "dd4ae528-0360-4c8b-890e-2a56f60f1cfe"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"help\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-yes-no-prompted",
+        "value": null
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "57a2d626-3671-4c7e-8a8d-737f339928b8"
+  } ],
+  "transitionRouteGroups": [ "main.ride-status" ]
+}

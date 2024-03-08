@@ -1,0 +1,29 @@
+{
+  "name": "d19879f0-fda0-4c5f-b7b4-7d1efd519f32",
+  "displayName": "flow.end-session",
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "do-work",
+    "name": "210bca9f-eb2a-40ba-9537-56f2042a95bc"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "923f25e7-d711-4750-b8de-20857317fb54"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "4f20490f-574b-4009-aa07-da20e94a4ca6"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  }
+}

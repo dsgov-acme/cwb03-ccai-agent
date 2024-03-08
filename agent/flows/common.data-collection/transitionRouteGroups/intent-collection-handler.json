@@ -1,0 +1,58 @@
+{
+  "name": "ab2ecaa8-063a-4a1b-bdaf-48e5dbfcf1b7",
+  "displayName": "intent-collection-handler",
+  "transitionRoutes": [ {
+    "intent": "general.smalltalk.repeat",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-outcome",
+        "value": "repeat"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "7bddec62-f4ec-4ca0-80d8-6dce3a7d716a"
+  }, {
+    "intent": "common.smalltalk.help",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-outcome",
+        "value": "help"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "7d1cafa3-6081-4f63-b281-01128469ca5f"
+  }, {
+    "intent": "common.smalltalk.more-time",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.more-time-initializing",
+        "value": true
+      } ]
+    },
+    "targetPage": "more-time-handler",
+    "name": "9cbac7cb-fe43-4f63-a47a-30bed3c015f4"
+  }, {
+    "intent": "common.smalltalk.back",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-outcome",
+        "value": "back"
+      }, {
+        "parameter": "more-time-count",
+        "value": null
+      }, {
+        "parameter": "data-collection-attempt-count",
+        "value": null
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "82b1736b-3582-4921-9be3-75ec4c42ba87"
+  }, {
+    "intent": "generic.smalltalk.end",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "flow.goodbye",
+    "name": "08ecc1d4-4f5e-4fd8-84e6-76fd4054baec"
+  } ]
+}

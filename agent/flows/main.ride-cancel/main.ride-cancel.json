@@ -1,0 +1,29 @@
+{
+  "name": "df4836ec-dd79-4ffe-86e3-9828fa0b6d33",
+  "displayName": "main.ride-cancel",
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check-authentication",
+    "name": "8dc7ba87-aebb-48ae-9ed3-bb72c2907458"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "dc5d8a95-0a8d-482c-9576-4e3d44c48bbe"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "56418b30-3240-41df-8e40-e8a783633757"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  }
+}

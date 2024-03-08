@@ -1,0 +1,148 @@
+{
+  "name": "7c2d387c-d31c-4f53-8903-7d1513811161",
+  "displayName": "start-ride-status",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "collect-intent",
+        "flow": "common.data-collection"
+      },
+      "textResponses": [ {
+        "text": [ "Thanks for calling MTA Access-A-Ride. Tell me in a few words how I can help you." ]
+      } ],
+      "currentFlow": {
+        "name": "common.data-collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "ride status"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "faq.ride-status"
+      },
+      "currentPage": {
+        "name": "collect-yes-no",
+        "flow": "common.data-collection"
+      },
+      "textResponses": [ {
+        "text": [ "Please confirm, do you want to hear details about a scheduled ride?" ]
+      }, {
+        "text": [ "If yes, please say yes, or press one. If no, say no, or press two." ]
+      } ],
+      "currentFlow": {
+        "name": "common.data-collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "collect-any",
+        "flow": "common.data-collection"
+      },
+      "textResponses": [ {
+        "text": [ "Sure, I can help with that! First, what is your full name?" ]
+      } ],
+      "currentFlow": {
+        "name": "common.data-collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "Genaro Castro"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "collect-rider-id",
+        "flow": "common.data-collection"
+      },
+      "textResponses": [ {
+        "text": [ "Please speak or enter your Rider ID using your telephone keypad." ]
+      } ],
+      "currentFlow": {
+        "name": "common.data-collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "123456789"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "collect-yes-no",
+        "flow": "common.data-collection"
+      },
+      "textResponses": [ {
+        "text": [ "The rider we have on file with ID 123456789 is Genaro Castro. Is this you?" ]
+      } ],
+      "currentFlow": {
+        "name": "common.data-collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "collect-date",
+        "flow": "common.data-collection"
+      },
+      "textResponses": [ {
+        "text": [ "It looks like you have rides scheduled for multiple dates. When is the ride you want to know more about?" ]
+      } ],
+      "currentFlow": {
+        "name": "common.data-collection"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1709328463,
+    "nanos": 885539000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

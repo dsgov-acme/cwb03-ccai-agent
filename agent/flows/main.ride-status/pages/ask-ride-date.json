@@ -1,0 +1,52 @@
+{
+  "name": "e1f25476-805c-4c8f-89d0-6b880e87a548",
+  "displayName": "ask-ride-date",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "It looks like you have rides scheduled for multiple dates. When is the ride you want to know more about?" ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nIt looks like you have rides scheduled for multiple dates. When is the ride you want to know more about?\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-type",
+        "value": "date"
+      } ]
+    },
+    "targetFlow": "common.data-collection",
+    "name": "0cb223c8-a4a8-4194-9d9e-03b5282e9741"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"success\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.ride-date",
+        "value": "$sys.func.IDENTITY($session.params.data-collection-date)"
+      } ]
+    },
+    "targetPage": "check-ride-date-for-rides",
+    "name": "d22dc210-5032-4f0f-9fe8-f6d0599cb9cc"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"help\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-date-prompted",
+        "value": null
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "e13ec68c-6141-4d85-a758-4f5ffae768b6"
+  } ],
+  "transitionRouteGroups": [ "main.ride-status" ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "9dd07102-d735-492f-afaa-40794ea53b7c",
+  "displayName": "main.ride-status",
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check-authentication",
+    "name": "bc5c97ad-a44e-477a-822c-1fb104ef27f3"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "d3b99a8f-37cf-4995-9362-94db7526a051"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "a73e3ce9-5f12-4d6d-a764-60ff879809a0"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  }
+}

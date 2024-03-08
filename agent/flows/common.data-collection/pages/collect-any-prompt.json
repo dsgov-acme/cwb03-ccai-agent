@@ -1,0 +1,25 @@
+{
+  "name": "7f15f99e-e785-4cb6-94d6-6b87d19722c0",
+  "displayName": "collect-any-prompt",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.data-collection-prompted = null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-any-prompted",
+        "value": true
+      } ]
+    },
+    "targetPage": "collect-any",
+    "name": "5d1b0337-72cb-4886-94d9-1de24fa4b525"
+  }, {
+    "condition": "$session.params.data-collection-prompted != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "collect-any",
+    "name": "0e3dd21d-a304-471e-80d4-1d0ac874ca02"
+  } ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "954d12c6-8b60-43d3-8705-acb55ced6104",
+  "displayName": "welcome-message",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Thanks for calling MTA Access-A-Ride. Tell me in a few words how I can help you." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nThanks for calling MTA Access-A-Ride. Tell me in a few words how I can help you.\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-attempts-allowed",
+        "value": 3
+      }, {
+        "parameter": "intent-outcome",
+        "value": "routing"
+      } ]
+    },
+    "targetFlow": "common.routing",
+    "name": "df1faaf9-520f-485f-9dd1-db1f157fe492"
+  } ]
+}

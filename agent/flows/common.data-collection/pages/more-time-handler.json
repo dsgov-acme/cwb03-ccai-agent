@@ -1,0 +1,73 @@
+{
+  "name": "802f8a9d-34c7-4672-933f-270480f844c3",
+  "displayName": "more-time-handler",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.more-time-initializing = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "more-time-count",
+        "value": 4
+      }, {
+        "parameter": "data-collection-no-input",
+        "value": null
+      }, {
+        "parameter": "$flow.more-time-extensions",
+        "value": "$sys.func.IF(\"$flow.more-time-extensions = null\", -1, $flow.more-time-extensions)"
+      }, {
+        "parameter": "$flow.more-time-extensions",
+        "value": "$sys.func.ADD($flow.more-time-extensions, 1)"
+      }, {
+        "parameter": "$flow.more-time-initializing",
+        "value": false
+      } ]
+    },
+    "name": "250d77c3-3a8b-4128-9405-f5cfcebc88da"
+  }, {
+    "condition": "$session.params.more-time-expired = true OR ($flow.more-time-extensions != null AND $flow.more-time-extensions \u003e= 3)",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "more-time-expired",
+        "value": true
+      } ]
+    },
+    "targetPage": "more-time-expired",
+    "name": "8b773d7c-397b-4780-920b-2542a26a4269"
+  }, {
+    "condition": "$session.params.more-time-count = 4",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "more-time-count",
+        "value": "$sys.func.MINUS($session.params.more-time-count, 1)"
+      } ]
+    },
+    "targetPage": "more-time-message",
+    "name": "dc9e5aea-9c2f-49cb-878b-664ee65864fc"
+  }, {
+    "condition": "$session.params.more-time-count \u003e 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "more-time-count",
+        "value": "$sys.func.MINUS($session.params.more-time-count, 1)"
+      } ]
+    },
+    "targetPage": "Start Page",
+    "name": "a743c2b9-6d90-418a-bd9b-5ccdfad0cef0"
+  }, {
+    "condition": "$session.params.more-time-count = 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "more-time-running-out",
+    "name": "ff98d035-5b2f-4a8e-8bea-b77d03cf44f1"
+  }, {
+    "condition": "$session.params.more-time-count \u003c= 0",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "out-of-time",
+    "name": "ec7c6f36-c912-4210-a13a-fd9b41256f69"
+  } ]
+}

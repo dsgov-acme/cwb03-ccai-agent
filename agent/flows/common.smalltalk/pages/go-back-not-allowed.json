@@ -1,0 +1,28 @@
+{
+  "name": "60ad1ed9-eae1-4213-93a6-ba52a98a13f5",
+  "displayName": "go-back-not-allowed",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "I'm sorry, you can not go back from here." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nI'm sorry, you can not go back from here.\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Flow",
+    "name": "63616e65-fd95-475b-92bc-3144a5cd92fd"
+  } ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "cc6ba3ab-0dfb-4105-8d13-8ae4c16bd452",
+  "displayName": "goodbye-message",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Thank you for calling. Goodbye!" ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nThank you for calling. Goodbye!\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "flow.end-session",
+    "name": "19f9fdfe-2574-4ee6-aa43-5cc381dfb3e7"
+  } ]
+}

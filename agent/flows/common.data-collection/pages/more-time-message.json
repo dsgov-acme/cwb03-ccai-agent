@@ -1,0 +1,28 @@
+{
+  "name": "cb321571-bc04-4d7b-a8c1-a508c94a2402",
+  "displayName": "more-time-message",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Sure, I can hold. Speak your response when you are ready." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nSure, I can hold. Speak your response when you are ready.\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Start Page",
+    "name": "12e90948-fb3b-404a-bf57-9390627b9400"
+  } ]
+}

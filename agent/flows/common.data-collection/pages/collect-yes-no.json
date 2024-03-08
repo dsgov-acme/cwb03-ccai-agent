@@ -1,0 +1,39 @@
+{
+  "name": "e5cfc27b-3a57-4031-9424-38b54d6a85cf",
+  "displayName": "collect-yes-no",
+  "form": {
+    "parameters": [ {
+      "displayName": "data-collection-yes-no",
+      "required": true,
+      "entityType": "@yes-no-response",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "targetPage": "no-input-router",
+          "event": "sys.no-input-default",
+          "triggerFulfillment": {
+          
+          },
+          "name": "a55c39c6-f725-4d01-8b10-5b639ce21d6b"
+        }, {
+          "targetPage": "no-match-router",
+          "event": "sys.no-match-default",
+          "triggerFulfillment": {
+          
+          },
+          "name": "26176a2b-3a03-4175-8534-be82ca491faa"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "maxDigits": 1,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "transitionRouteGroups": [ "data-collection" ]
+}

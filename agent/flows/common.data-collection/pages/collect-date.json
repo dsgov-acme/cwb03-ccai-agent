@@ -1,0 +1,83 @@
+{
+  "name": "c6872605-8c5e-4b5f-955b-a7fb936ffabb",
+  "displayName": "collect-date",
+  "form": {
+    "parameters": [ {
+      "displayName": "data-collection-date",
+      "required": true,
+      "entityType": "@date",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "targetPage": "no-match-router",
+          "event": "sys.no-match-default",
+          "triggerFulfillment": {
+          
+          },
+          "name": "9786381a-8156-427c-9848-4b7b5c8966d9"
+        }, {
+          "targetPage": "no-input-router",
+          "event": "sys.no-input-default",
+          "triggerFulfillment": {
+          
+          },
+          "name": "92d70108-987b-44df-b75f-a822626551ac"
+        } ]
+      }
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = FINAL AND $session.params.data-collection-date.date != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-outcome",
+        "value": "success"
+      }, {
+        "parameter": "more-time-count",
+        "value": null
+      }, {
+        "parameter": "data-collection-attempt-count",
+        "value": null
+      }, {
+        "parameter": "data-collection-no-input",
+        "value": null
+      }, {
+        "parameter": "more-time-expired",
+        "value": null
+      }, {
+        "parameter": "data-collection-date",
+        "value": "$sys.func.IDENTITY($session.params.data-collection-date.date)"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "3821ace7-04e1-4362-a0c0-33cf54a9be1f"
+  }, {
+    "condition": "$page.params.status = FINAL AND $session.params.data-collection-date.date-time != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-outcome",
+        "value": "success"
+      }, {
+        "parameter": "more-time-count",
+        "value": null
+      }, {
+        "parameter": "data-collection-attempt-count",
+        "value": null
+      }, {
+        "parameter": "data-collection-no-input",
+        "value": null
+      }, {
+        "parameter": "more-time-expired",
+        "value": null
+      }, {
+        "parameter": "data-collection-date",
+        "value": "$sys.func.IDENTITY($session.params.data-collection-date.date-time)"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "3ed13c4b-1ae0-437a-85d8-a61e0b6fe285"
+  } ],
+  "transitionRouteGroups": [ "data-collection" ]
+}

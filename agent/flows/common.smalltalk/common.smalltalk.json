@@ -1,0 +1,85 @@
+{
+  "name": "f2f3f9c5-01e2-4da3-8dca-e5f84db886ea",
+  "displayName": "common.smalltalk",
+  "transitionRoutes": [ {
+    "condition": "$session.params.data-collection-no-input = true AND $session.params.data-collection-attempt-count = 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "data-collection-retry-first-attempt",
+    "name": "0bc720f2-ff60-42e4-a0d2-0a47eae9c28d"
+  }, {
+    "condition": "$session.params.data-collection-no-input = true AND $session.params.data-collection-attempt-count \u003c $session.params.data-collection-attempts-allowed",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "data-collection-retry",
+    "name": "99bdc309-443e-4195-bbbd-00bd16ffe911"
+  }, {
+    "condition": "($session.params.smalltalk = \"required-failed\" OR $session.params.smalltalk = \"optional-failed\") AND $session.params.data-collection-attempt-count = 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "data-collection-retry-first-attempt",
+    "name": "f5fa3893-7e51-4431-86d5-cf72898e4ff8"
+  }, {
+    "condition": "($session.params.smalltalk = \"required-failed\" OR $session.params.smalltalk = \"optional-failed\") AND $session.params.data-collection-attempt-count \u003c $session.params.data-collection-attempts-allowed",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "data-collection-retry",
+    "name": "7d92b5ae-0947-499a-ae7b-95aec21a95c3"
+  }, {
+    "condition": "$session.params.smalltalk = \"required-failed\" AND $session.params.data-collection-attempt-count = $session.params.data-collection-attempts-allowed",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "data-collection-required-failed",
+    "name": "9b29b493-3308-41b7-83f9-41b1d6bb4223"
+  }, {
+    "condition": "$session.params.smalltalk = \"go-back-not-allowed\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "go-back-not-allowed",
+    "name": "ac764206-3049-4f99-87de-db115f43da67"
+  }, {
+    "condition": "$session.params.smalltalk = \"go-back\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "go-back",
+    "name": "f42baaad-31ff-4818-8b70-8e33e988b7b3"
+  }, {
+    "condition": "$session.params.smalltalk = \"cancel\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "cancel",
+    "name": "6cedd015-8e89-4788-904e-1c3780730af6"
+  }, {
+    "condition": "$session.params.smalltalk = \"system-error\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "system-error",
+    "name": "e26dbdc1-485c-461f-8456-690ebbf5ad92"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "cfbd1802-0100-48c2-a731-b7446db15a7b"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "7d6d67a0-6cd8-435e-8680-5372d2cb4fb4"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  }
+}

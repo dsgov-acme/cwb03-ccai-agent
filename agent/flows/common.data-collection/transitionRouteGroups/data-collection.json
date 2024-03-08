@@ -1,0 +1,95 @@
+{
+  "name": "22617a40-0d30-4877-9359-c53befd7396a",
+  "displayName": "data-collection",
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = FINAL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-outcome",
+        "value": "success"
+      }, {
+        "parameter": "more-time-count",
+        "value": null
+      }, {
+        "parameter": "data-collection-attempt-count",
+        "value": null
+      }, {
+        "parameter": "data-collection-no-input",
+        "value": null
+      }, {
+        "parameter": "more-time-expired",
+        "value": null
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "e6d0cbcd-d132-4d77-86d0-3da454cc4c45"
+  }, {
+    "intent": "general.smalltalk.repeat",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-outcome",
+        "value": "repeat"
+      }, {
+        "parameter": "data-collection-no-input",
+        "value": null
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "4e66dedd-541c-4355-9522-4b989d79fe1e"
+  }, {
+    "intent": "common.smalltalk.cancel",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-no-input",
+        "value": null
+      } ]
+    },
+    "targetPage": "cancel-smalltalk",
+    "name": "697204d2-7e70-45f4-83d3-e7e4645b30e4"
+  }, {
+    "intent": "common.smalltalk.help",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-outcome",
+        "value": "help"
+      }, {
+        "parameter": "data-collection-no-input",
+        "value": null
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "ab0b5296-d672-4992-8691-dde12778f6ab"
+  }, {
+    "intent": "common.smalltalk.more-time",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.more-time-initializing",
+        "value": true
+      } ]
+    },
+    "targetPage": "more-time-handler",
+    "name": "006e0caa-7c15-4025-b420-94366c3097d8"
+  }, {
+    "intent": "common.smalltalk.back",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-outcome",
+        "value": "back"
+      }, {
+        "parameter": "more-time-count",
+        "value": null
+      }, {
+        "parameter": "data-collection-attempt-count",
+        "value": null
+      }, {
+        "parameter": "data-collection-no-input",
+        "value": null
+      }, {
+        "parameter": "more-time-expired",
+        "value": null
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "ccb27cad-1f3a-4031-8361-8dfa3e6fc7a5"
+  } ]
+}

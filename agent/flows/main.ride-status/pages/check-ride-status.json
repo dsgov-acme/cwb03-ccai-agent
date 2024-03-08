@@ -1,0 +1,39 @@
+{
+  "name": "a93e8ef8-40f3-4610-9136-c84592e691a4",
+  "displayName": "check-ride-status",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$sys.func.GET_FIELD($flow.ride, \"status\") = \"SCHEDULED\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ride-status-scheduled",
+    "name": "495ce02a-90c5-4469-aa20-32cc0b6d8aa8"
+  }, {
+    "condition": "$sys.func.GET_FIELD($flow.ride, \"status\") = \"DELAYED\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ride-status-delayed",
+    "name": "f730f9d0-4bd4-4480-85ec-c100d298321f"
+  }, {
+    "condition": "$sys.func.GET_FIELD($flow.ride, \"status\") = \"IN_PROGRESS\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ride-status-in-progress",
+    "name": "0d24f02e-c005-469c-ac8c-67cdfdd6cc20"
+  }, {
+    "condition": "$sys.func.GET_FIELD($flow.ride, \"status\") = \"IN_PROGRESS_DELAYED\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ride-status-in-progress-delayed",
+    "name": "05b0a244-2c74-46e2-a0ff-8423912fbcbe"
+  } ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "a0406e5b-9675-4b19-a6b0-6e25e0fdf461",
+  "displayName": "ride-status-delayed",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "I'm sorry, it looks like your ride is delayed by $sys.func.GET_FIELD($flow.ride, \"delayMinutes\") minutes. Your driver should pick you up around $sys.func.FORMAT_DATE($sys.func.GET_FIELD($flow.ride, \"pickupTime\"), \"h:mm a\"), going from $sys.func.GET_FIELD($flow.ride, \"pickupLocation\") to $sys.func.GET_FIELD($flow.ride, \"dropoffLocation\") with an estimated drop off time of $sys.func.FORMAT_DATE($sys.func.GET_FIELD($flow.ride, \"dropoffTime\"), \"h:mm a\"). Your driver $sys.func.GET_FIELD($flow.ride, \"driverName\") is $sys.func.GET_FIELD($flow.ride, \"minutesAway\") minutes away and will arrive in a $sys.func.GET_FIELD($flow.ride, \"driverVehicle\")." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nI'm sorry, it looks like your ride is delayed by $sys.func.GET_FIELD($flow.ride, \"delayMinutes\") minutes. Your driver should pick you up around $sys.func.FORMAT_DATE($sys.func.GET_FIELD($flow.ride, \"pickupTime\"), \"h:mm a\"), going from $sys.func.GET_FIELD($flow.ride, \"pickupLocation\") to $sys.func.GET_FIELD($flow.ride, \"dropoffLocation\") with an estimated drop off time of $sys.func.FORMAT_DATE($sys.func.GET_FIELD($flow.ride, \"dropoffTime\"), \"h:mm a\"). Your driver $sys.func.GET_FIELD($flow.ride, \"driverName\") is $sys.func.GET_FIELD($flow.ride, \"minutesAway\") minutes away and will arrive in a $sys.func.GET_FIELD($flow.ride, \"driverVehicle\").\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ask-need-help-with-ride",
+    "name": "37dfeec0-63f0-4974-bcf5-fa6decb9b83b"
+  } ]
+}

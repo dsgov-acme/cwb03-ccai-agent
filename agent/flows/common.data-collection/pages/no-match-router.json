@@ -1,0 +1,47 @@
+{
+  "name": "9cb845f8-fe19-4559-861d-5a9a44d5e68a",
+  "displayName": "no-match-router",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.data-collection-attempt-count = null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-attempt-count",
+        "value": 1
+      }, {
+        "parameter": "data-collection-outcome",
+        "value": "error"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "5567dfc4-c6a5-41f9-b4dc-c5cf308efd49"
+  }, {
+    "condition": "$session.params.data-collection-attempt-count \u003c $session.params.data-collection-attempts-allowed",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-outcome",
+        "value": "error"
+      }, {
+        "parameter": "data-collection-attempt-count",
+        "value": "$sys.func.ADD($session.params.data-collection-attempt-count, 1)"
+      } ]
+    },
+    "targetPage": "reset-prompt",
+    "name": "7392a37e-3ce8-4457-9ed9-2f3fc531d6a0"
+  }, {
+    "condition": "$session.params.data-collection-attempt-count != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-attempt-count",
+        "value": "$sys.func.ADD($session.params.data-collection-attempt-count, 1)"
+      }, {
+        "parameter": "data-collection-outcome",
+        "value": "error"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "09ce463e-37d2-44b7-9759-4ebd0b29a49d"
+  } ]
+}

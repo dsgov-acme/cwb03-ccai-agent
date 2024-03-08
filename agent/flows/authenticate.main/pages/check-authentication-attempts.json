@@ -1,0 +1,25 @@
+{
+  "name": "800e3c5e-a630-4aa6-a23b-2357589a6fe1",
+  "displayName": "check-authentication-attempts",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.authentication-attempts \u003c 3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.authentication-attempts",
+        "value": "$sys.func.ADD($flow.authentication-attempts, 1)"
+      } ]
+    },
+    "targetPage": "get-rider-id",
+    "name": "7c1d6598-60aa-48ff-8335-2bc599f20bfd"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "failed-id-validation",
+    "name": "523b2687-011e-45b9-9dbd-4673158d2434"
+  } ]
+}

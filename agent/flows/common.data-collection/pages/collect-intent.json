@@ -1,0 +1,23 @@
+{
+  "name": "5949256a-61ed-452b-bf27-7170a1a9c4d9",
+  "displayName": "collect-intent",
+  "form": {
+  
+  },
+  "eventHandlers": [ {
+    "targetPage": "no-input-router",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "a7d5d53d-ce35-4070-b247-edbb5ff0c33e"
+  }, {
+    "targetPage": "no-match-router",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "8885fbf0-5027-4261-9371-032d89a65804"
+  } ],
+  "transitionRouteGroups": [ "faq-collection-handler", "intent-collection-handler" ]
+}

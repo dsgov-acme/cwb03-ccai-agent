@@ -1,0 +1,25 @@
+{
+  "name": "44568965-627f-4e3f-9842-4b59c93f51fc",
+  "displayName": "cancel-smalltalk",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "smalltalk",
+        "value": "cancel"
+      } ]
+    },
+    "targetFlow": "common.smalltalk",
+    "name": "4945e297-f97c-4013-aa1a-7b240df630e2"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "confirm-cancel",
+    "name": "db40d6d1-d8be-4ff2-94b4-932ef4f1a1fb"
+  } ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "8d70b673-70a6-40cb-a5d5-8f14191939b5",
+  "displayName": "ride-status-scheduled",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Your ride is scheduled for pickup between $sys.func.FORMAT_DATE($sys.func.GET_FIELD($flow.ride, \"pickupTime\"), \"h:mm a\") and $sys.func.FORMAT_DATE($sys.func.GET_FIELD($flow.ride, \"pickupTimeMax\"), \"h:mm a\"), going from $sys.func.GET_FIELD($flow.ride, \"pickupLocation\") to $sys.func.GET_FIELD($flow.ride, \"dropoffLocation\") with an estimated drop off time between $sys.func.FORMAT_DATE($sys.func.GET_FIELD($flow.ride, \"dropoffTime\"), \"h:mm a\") and $sys.func.FORMAT_DATE($sys.func.GET_FIELD($flow.ride, \"dropoffTimeMax\"), \"h:mm a\"). Your driver $sys.func.GET_FIELD($flow.ride, \"driverName\") is on time and will arrive in a $sys.func.GET_FIELD($flow.ride, \"driverVehicle\")." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nYour ride is scheduled for pickup between $sys.func.FORMAT_DATE($sys.func.GET_FIELD($flow.ride, \"pickupTime\"), \"h:mm a\") and $sys.func.FORMAT_DATE($sys.func.GET_FIELD($flow.ride, \"pickupTimeMax\"), \"h:mm a\"), going from $sys.func.GET_FIELD($flow.ride, \"pickupLocation\") to $sys.func.GET_FIELD($flow.ride, \"dropoffLocation\") with an estimated drop off time between $sys.func.FORMAT_DATE($sys.func.GET_FIELD($flow.ride, \"dropoffTime\"), \"h:mm a\") and $sys.func.FORMAT_DATE($sys.func.GET_FIELD($flow.ride, \"dropoffTimeMax\"), \"h:mm a\"). Your driver $sys.func.GET_FIELD($flow.ride, \"driverName\") is on time and will arrive in a $sys.func.GET_FIELD($flow.ride, \"driverVehicle\").\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ask-need-help-with-ride",
+    "name": "611f883e-eb5d-4d03-a8a6-f3bee4fab0f3"
+  } ]
+}

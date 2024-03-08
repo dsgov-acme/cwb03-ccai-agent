@@ -1,0 +1,36 @@
+{
+  "name": "75bfea6e-3ad3-4c29-9e06-45b0ba28e13f",
+  "displayName": "collect-yes-no-prompt",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.data-collection-yes-no-prompted = null",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "If yes, please say yes, or press one. If no, say no, or press two." ]
+        },
+        "languageCode": "en"
+      }, {
+        "outputAudioText": {
+          "ssml": "\u003cspeak\u003e\nIf yes, please say yes, or press one. If no, say no, or press two.\n\u003c/speak\u003e"
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "data-collection-yes-no-prompted",
+        "value": true
+      } ]
+    },
+    "targetPage": "collect-yes-no",
+    "name": "d6dc9dee-3cfe-4797-9034-9156db6b595a"
+  }, {
+    "condition": "$session.params.data-collection-yes-no-prompted != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "collect-yes-no",
+    "name": "5be8bf66-311b-4013-baba-e113407df0e2"
+  } ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "d590f2c6-6a4f-4f73-a510-6cfc792cfafe",
+  "displayName": "more-time-running-out",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Your extra time is about to end.  If you need more time, say more time or press star." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nYour extra time is about to end.  If you need more time, say more time or press star.\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "more-time-count",
+        "value": "$sys.func.MINUS($session.params.more-time-count, 1)"
+      } ]
+    },
+    "targetPage": "Start Page",
+    "name": "ac25f87a-7066-4b3f-8947-dd9e93603861"
+  } ]
+}

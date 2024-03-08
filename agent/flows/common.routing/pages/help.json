@@ -1,0 +1,32 @@
+{
+  "name": "7dd03e84-aa14-4434-b00c-b437a55d4b77",
+  "displayName": "help",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "I can answer frequently asked questions about requesting a ride. You can ask about any of the following: requesting a ride, cancelling a ride, checking the status of a ride.\n\nWould you like to hear more suggestions on topics you can ask about?" ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nI can answer frequently asked questions about requesting a ride. You can ask about any of the following: requesting a ride, cancelling a ride, checking the status of a ride.\n\nWould you like to hear more suggestions on topics you can ask about?\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-type",
+        "value": "yes-no"
+      } ]
+    },
+    "targetFlow": "common.data-collection",
+    "name": "c5c2fc06-9760-4ce3-8f14-79dabd358d58"
+  } ],
+  "transitionRouteGroups": [ "yes-no-help-handler", "go-back-not-allowed-handler", "required-failed-error-handler", "repeat-cancel-handler" ]
+}

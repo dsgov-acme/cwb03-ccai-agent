@@ -1,0 +1,25 @@
+{
+  "name": "6250f5f3-e8b7-4d46-b36b-93e42ebbcfe7",
+  "displayName": "collect-number-prompt",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.data-collection-number-prompted != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "collect-number",
+    "name": "8866a9b6-2683-48d7-a988-01fa9eb108cc"
+  }, {
+    "condition": "$session.params.data-collection-number-prompted = null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-number-prompted",
+        "value": true
+      } ]
+    },
+    "targetPage": "collect-number",
+    "name": "6cd8d5d2-cc03-4087-9362-0bfc1aed2a24"
+  } ]
+}

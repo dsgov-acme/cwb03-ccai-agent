@@ -1,0 +1,11 @@
+{
+  "entities": [ {
+    "value": "yes",
+    "synonyms": [ "dtmf_digits_1", "yes", "Yes" ],
+    "languageCode": "en"
+  }, {
+    "value": "no",
+    "synonyms": [ "dtmf_digits_2", "no", "No" ],
+    "languageCode": "en"
+  } ]
+}

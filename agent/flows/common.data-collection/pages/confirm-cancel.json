@@ -1,0 +1,58 @@
+{
+  "name": "2a24bea9-304a-4f2a-8aa0-7c84a2915af6",
+  "displayName": "confirm-cancel",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "generic.smalltalk.yes",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-outcome",
+        "value": "cancel"
+      }, {
+        "parameter": "more-time-count",
+        "value": null
+      }, {
+        "parameter": "data-collection-attempt-count",
+        "value": null
+      }, {
+        "parameter": "data-collection-optional",
+        "value": null
+      }, {
+        "parameter": "data-collection-back-smalltalk",
+        "value": null
+      }, {
+        "parameter": "more-time-expired",
+        "value": null
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "a58ca8d9-db1c-408b-8ff1-c09868d79bf2"
+  }, {
+    "intent": "generic.smalltalk.no",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-outcome",
+        "value": "repeat"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "1d479516-b899-4784-b19d-b1b7a957dc79"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "no-input-router",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "c40a5d90-e49e-4c28-9ba8-200d3a08d734"
+  }, {
+    "targetPage": "no-match-router",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "75c2f748-e452-469a-bdb8-4250008df663"
+  } ]
+}

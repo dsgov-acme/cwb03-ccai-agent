@@ -1,0 +1,50 @@
+{
+  "name": "5f0048c2-7c93-44bb-aef9-12bcfae66aee",
+  "displayName": "faq.ride",
+  "transitionRoutes": [ {
+    "intent": "faq.ride-request",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "request",
+    "name": "cc95f2e3-bca9-4227-b103-a265191641e6"
+  }, {
+    "intent": "faq.ride-status",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "status",
+    "name": "2bc79836-9d28-442a-9465-8fb4b305e81b"
+  }, {
+    "intent": "faq.ride-cancel",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "cancel",
+    "name": "3664cbfa-27ef-4d4b-8b9f-2f2de5029dd7"
+  }, {
+    "intent": "faq.ride-update",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "update",
+    "name": "9e38549b-342b-42bd-a60a-59ac681b7531"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "d71ebd88-2612-41fa-b69f-d939af707dca"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "20bcdd68-7daf-4857-aff7-c73f0d124c7d"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  }
+}

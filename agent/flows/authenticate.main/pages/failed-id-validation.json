@@ -1,0 +1,31 @@
+{
+  "name": "734a0a7e-8dca-475a-a355-682c75ffda25",
+  "displayName": "failed-id-validation",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Sorry, we were unable to validate your rider ID." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nSorry, we were unable to validate your rider ID.\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "authentication-outcome",
+        "value": "failure"
+      } ]
+    },
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "name": "abf44f01-a6cb-4015-b916-0abb1bf84aeb"
+  } ]
+}

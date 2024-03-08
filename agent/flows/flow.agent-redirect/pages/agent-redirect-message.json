@@ -1,0 +1,28 @@
+{
+  "name": "186905c3-9e44-4a92-b033-9eb0937c785f",
+  "displayName": "agent-redirect-message",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "You are being redirected to an agent." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nYou are being redirected to an agent.\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "flow.goodbye",
+    "name": "35af8782-b368-4901-bfcc-447afbf616b7"
+  } ]
+}

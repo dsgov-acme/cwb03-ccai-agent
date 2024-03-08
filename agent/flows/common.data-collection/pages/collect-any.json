@@ -1,0 +1,33 @@
+{
+  "name": "70d917ab-e916-47b0-bda9-3b6bb1b39295",
+  "displayName": "collect-any",
+  "form": {
+    "parameters": [ {
+      "displayName": "data-collection-any",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "targetPage": "no-match-router",
+          "event": "sys.no-match-default",
+          "triggerFulfillment": {
+          
+          },
+          "name": "8fa758ce-2473-4485-8602-e99561d10445"
+        }, {
+          "targetPage": "no-input-router",
+          "event": "sys.no-input-default",
+          "triggerFulfillment": {
+          
+          },
+          "name": "39e2bdcd-03e1-41d1-a68e-e30287276470"
+        } ]
+      },
+      "redact": true
+    } ]
+  },
+  "transitionRouteGroups": [ "data-collection" ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "1e1099ca-1c95-48c2-845e-698be4cd6cd4",
+  "displayName": "common.routing",
+  "transitionRoutes": [ {
+    "condition": "$session.params.intent-outcome = \"routing\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "intent-routing",
+    "name": "2cc66a5e-c8e7-4763-a826-c1c461917eab"
+  }, {
+    "condition": "$session.params.intent-outcome = \"cancel\" OR $session.params.intent-outcome = \"success\" OR $session.params.intent-outcome = \"error\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "additional-help",
+    "name": "1f9ba176-d61f-466c-9c38-114b18d7032b"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "aad40c1b-6f6e-435c-b1c1-da31a045f3e5"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "dbfc3228-520a-4a9b-ab7c-a9d049548ba9"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  },
+  "transitionRouteGroups": [ "faq-handler" ]
+}

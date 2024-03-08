@@ -1,0 +1,94 @@
+{
+  "name": "6382e10b-91ca-4b26-a470-8fd10cdca794",
+  "displayName": "main.ride",
+  "transitionRoutes": [ {
+    "intent": "faq.ride-request",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "faq.ride",
+    "name": "53ab263e-9bdd-4cc2-938e-f551e90f5bf3"
+  }, {
+    "intent": "faq.ride-update",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "faq.ride",
+    "name": "16f65316-3230-4628-9cbf-bbd27ce66bc7"
+  }, {
+    "intent": "faq.ride-status",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "faq.ride",
+    "name": "bf797dd3-d4a6-45b7-9f5d-ca298728c537"
+  }, {
+    "intent": "faq.ride-cancel",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "faq.ride",
+    "name": "c514a147-186d-4646-917e-53f518d96579"
+  }, {
+    "condition": "$session.params.ride-request = \"request\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "main.ride-request",
+    "name": "c11e2631-80b8-4ea3-a7c6-4693764072f3"
+  }, {
+    "condition": "$session.params.ride-request = \"status\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "main.ride-status",
+    "name": "9c4d1ce1-b77f-40f3-836c-864703f79cad"
+  }, {
+    "condition": "$session.params.ride-request = \"cancel\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "main.ride-cancel",
+    "name": "4178f930-58c0-4eb1-9127-ab760d54bfe6"
+  }, {
+    "condition": "$session.params.ride-request = \"update\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "main.ride-update",
+    "name": "07172ef8-e1af-40d3-894e-db1f51b34c7c"
+  }, {
+    "condition": "$session.params.ride-outcome = \"success\" OR $session.params.ride-outcome = \"cancel\" OR $session.params.ride-outcome = \"confirmation\" OR $session.params.ride-outcome = \"error\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "ride-request",
+        "value": null
+      }, {
+        "parameter": "intent-outcome",
+        "value": "$session.params.ride-outcome"
+      }, {
+        "parameter": "ride-outcome",
+        "value": null
+      } ]
+    },
+    "targetFlow": "common.routing",
+    "name": "4cf407c5-8cc2-400f-9128-e9a5f2324a94"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "f6993982-57a3-461e-a936-e226a1756e83"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "363f6440-6b3b-48da-ab06-1030b2033433"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  }
+}

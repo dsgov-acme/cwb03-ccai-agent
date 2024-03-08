@@ -1,0 +1,28 @@
+{
+  "name": "d07e2b3f-1441-40b7-87c2-fb99da6403c4",
+  "displayName": "rides-scheduled-on-date-single",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "It looks like you have 1 ride scheduled for $sys.func.FORMAT_DATE($sys.func.GET_FIELD($sys.func.GET($flow.filtered-rides, 0), \"pickupDate\"), \"EEEE, MMMM dd\")." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nIt looks like you have 1 ride scheduled for $sys.func.FORMAT_DATE($sys.func.GET_FIELD($sys.func.GET($flow.filtered-rides, 0), \"pickupDate\"), \"EEEE, MMMM dd\").\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check-ride-status",
+    "name": "505cd1e3-f8ed-42cf-8ee2-5e1f06dc3a06"
+  } ]
+}

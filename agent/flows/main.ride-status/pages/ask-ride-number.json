@@ -1,0 +1,65 @@
+{
+  "name": "3767c8f2-c393-4720-aa7d-2d1a52fc04e0",
+  "displayName": "ask-ride-number",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please say or enter the number of the ride you want to know more about." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nPlease say or enter the number of the ride you want to know more about.\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-type",
+        "value": "number"
+      } ]
+    },
+    "targetFlow": "common.data-collection",
+    "name": "581c7c32-33e9-4bc7-8449-8b5fea0ef4e1"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"success\" AND $session.params.data-collection-number \u003e= 1 AND $session.params.data-collection-number \u003c= $sys.func.COUNT($flow.filtered-rides)",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.ride-number",
+        "value": "$sys.func.IDENTITY($session.params.data-collection-number)"
+      }, {
+        "parameter": "$flow.ride-index",
+        "value": "$sys.func.MINUS($flow.ride-number, 1)"
+      }, {
+        "parameter": "$flow.ride",
+        "value": "$sys.func.GET($flow.filtered-rides, $flow.ride-index)"
+      } ]
+    },
+    "targetPage": "check-ride-status",
+    "name": "56b58eca-d00c-4e27-8317-6b78b7fd1a7e"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"success\" AND ($session.params.data-collection-number \u003c 1 OR $session.params.data-collection-number \u003e $sys.func.COUNT($flow.filtered-rides))",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ride-number-invalid",
+    "name": "2642b810-7cce-489e-b6c8-8f1477bf91fb"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"help\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-number-prompted",
+        "value": null
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "467511b0-3ce4-4bfd-b528-42abe7e08c3f"
+  } ],
+  "transitionRouteGroups": [ "main.ride-status" ]
+}

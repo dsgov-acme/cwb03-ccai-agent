@@ -1,0 +1,16 @@
+{
+  "name": "b359e33a-eaa8-4942-bbde-4d13f700b5a7",
+  "displayName": "generic.smalltalk.no",
+  "parameters": [ {
+    "id": "yes-no-response",
+    "entityType": "@yes-no-response"
+  }, {
+    "id": "rider-id",
+    "entityType": "@rider-id"
+  }, {
+    "id": "geo-city",
+    "entityType": "@sys.geo-city"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 16
+}

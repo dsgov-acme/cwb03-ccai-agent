@@ -1,0 +1,29 @@
+{
+  "name": "ce17283c-9d83-4962-a960-d3212a59f4e9",
+  "displayName": "main.ride-request",
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check-authentication",
+    "name": "e2f1e188-473e-4e42-b50a-b6087320d4b6"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "f4a17cfe-3902-481f-bc34-cac4c1036246"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "4d5dc3fe-c8c4-4c1b-9db1-f270e099fbe4"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  }
+}

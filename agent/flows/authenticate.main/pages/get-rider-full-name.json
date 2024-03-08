@@ -1,0 +1,52 @@
+{
+  "name": "04d7eb14-d2f8-48af-9f93-e8cbe5f94664",
+  "displayName": "get-rider-full-name",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Sure, I can help with that! First, what is your full name?" ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nSure, I can help with that! First, what is your full name?\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-type",
+        "value": "any"
+      } ]
+    },
+    "targetFlow": "common.data-collection",
+    "name": "051322b9-b3b4-4b80-ba24-1bdb61a0b561"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"success\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.rider-name",
+        "value": "$session.params.data-collection-any"
+      } ]
+    },
+    "targetPage": "get-rider-id",
+    "name": "3b1e0b8b-84c8-4adb-baa2-35993558f30b"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"help\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-any-prompted",
+        "value": null
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "c320c40f-fc35-437c-9f09-bdcef9ec7df9"
+  } ],
+  "transitionRouteGroups": [ "authenticate.main" ]
+}

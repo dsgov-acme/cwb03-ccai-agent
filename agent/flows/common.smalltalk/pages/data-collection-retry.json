@@ -1,0 +1,28 @@
+{
+  "name": "5ce80b9c-2487-4b4a-a6aa-8050dfef26e6",
+  "displayName": "data-collection-retry",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "I'm sorry, I didn't understand your response." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nI'm sorry, I didn't understand your response.\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Flow",
+    "name": "b90961f7-0390-4d31-aa7e-c5af60957450"
+  } ]
+}

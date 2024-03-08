@@ -1,0 +1,59 @@
+{
+  "name": "cf56fd15-d6e4-41b9-bd4a-7261e58adf06",
+  "displayName": "confirm-rider-name",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "The rider we have on file with ID $session.params.rider-id is $session.params.rider-name. Is this you?" ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nThe rider we have on file with ID $session.params.rider-id is $session.params.rider-name. Is this you?\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-type",
+        "value": "yes-no"
+      } ]
+    },
+    "targetFlow": "common.data-collection",
+    "name": "85b6b81c-bebb-41a5-8eb4-f839be49e689"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"success\" AND $session.params.data-collection-yes-no = \"yes\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "authentication-outcome",
+        "value": "success"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "0c293149-58a1-4fb2-bb4f-04c276bcd1ac"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"success\" AND $session.params.data-collection-yes-no = \"no\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check-authentication-attempts",
+    "name": "47c05563-075a-4270-9d3c-b9693a58c8c4"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"help\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-yes-no-prompted",
+        "value": null
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "60def4f3-43d1-4ccd-abe6-9b93d9d10557"
+  } ],
+  "transitionRouteGroups": [ "authenticate.main" ]
+}

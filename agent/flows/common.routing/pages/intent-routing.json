@@ -1,0 +1,66 @@
+{
+  "name": "474ec0f0-b5a2-4c36-a653-0c6aed954322",
+  "displayName": "intent-routing",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-type",
+        "value": "intent"
+      } ]
+    },
+    "targetFlow": "common.data-collection",
+    "name": "b7ee4ef4-ab30-4deb-a5df-4527845335e9"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"error\" AND $session.params.data-collection-attempt-count = 1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, I didn't get that. If you are on a speakerphone, please turn it off or speak closer to the phone receiver. Please say that again" ]
+        },
+        "languageCode": "en"
+      }, {
+        "outputAudioText": {
+          "ssml": "\u003cspeak\u003e\nSorry, I didn't get that. If you are on a speakerphone, please turn it off or speak closer to the phone receiver. Please say that again\n\u003c/speak\u003e"
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "1d486fae-7e84-48dc-911a-a7fdf9032c7b"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"error\" AND $session.params.data-collection-attempt-count \u003c $session.params.data-collection-attempts-allowed",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I am sorry, I did not get that. You can say things like I can't login or eligibility criteria." ]
+        },
+        "languageCode": "en"
+      }, {
+        "outputAudioText": {
+          "ssml": "\u003cspeak\u003e\nI am sorry, I did not get that. You can say things like I can't login or eligibility criteria.\n\u003c/speak\u003e"
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "cbe61cd2-ee0c-431c-b23f-2ceb5480270e"
+  }, {
+    "condition": "$session.params.data-collection-attempt-count \u003e= $session.params.data-collection-attempts-allowed",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "flow.goodbye",
+    "name": "479b42e6-adef-4a2e-896b-359ce1a1e95f"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"help\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "help",
+    "name": "3b4151a0-649e-4dbf-9fe6-7c554b7bbb90"
+  } ]
+}

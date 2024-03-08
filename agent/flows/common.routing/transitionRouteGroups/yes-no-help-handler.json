@@ -1,0 +1,15 @@
+{
+  "name": "edfcd9a1-f167-4c6a-834b-31e0d759537f",
+  "displayName": "yes-no-help-handler",
+  "transitionRoutes": [ {
+    "condition": "$session.params.data-collection-outcome = \"help\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-yes-no-prompted",
+        "value": null
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "7f372f8f-d6d6-4dea-b724-502f642895f1"
+  } ]
+}

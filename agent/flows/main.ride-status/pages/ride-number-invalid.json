@@ -1,0 +1,28 @@
+{
+  "name": "69469239-3cf1-4f72-9c6a-dbb1601e23c4",
+  "displayName": "ride-number-invalid",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "The number you provided was invalid." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nThe number you provided was invalid.\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ask-ride-number",
+    "name": "c76a9e89-1272-45cd-a344-7402fd384b68"
+  } ]
+}

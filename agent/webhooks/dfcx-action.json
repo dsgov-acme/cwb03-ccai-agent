@@ -1,0 +1,12 @@
+{
+  "name": "2a6b504a-6fa8-4ae0-ab5d-7eb13464005c",
+  "displayName": "dfcx-action",
+  "genericWebService": {
+    "uri": "https://api-dev.cwb03.dsgov.demo.nuvalence.io/wm/api/v1/dfcx/action",
+    "username": "DFCX_USER",
+    "password": "yNCmEqJfPjxVAkRTrpHR"
+  },
+  "timeout": {
+    "seconds": 30
+  }
+}

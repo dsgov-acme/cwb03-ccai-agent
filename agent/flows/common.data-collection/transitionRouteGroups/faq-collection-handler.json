@@ -1,0 +1,26 @@
+{
+  "name": "45e646bd-210e-4133-9f48-17f76081e906",
+  "displayName": "faq-collection-handler",
+  "transitionRoutes": [ {
+    "intent": "faq.ride-cancel",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "common.routing",
+    "name": "756ad9dc-c052-4933-a95a-ce8f0d21dd47"
+  }, {
+    "intent": "faq.ride-request",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "common.routing",
+    "name": "ae8f636e-e914-4b0d-9ec7-a562c02aca9b"
+  }, {
+    "intent": "faq.ride-status",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "common.routing",
+    "name": "3fcf86b1-d87c-4b0a-bc99-85a93083d920"
+  } ]
+}

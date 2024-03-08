@@ -1,0 +1,28 @@
+{
+  "name": "a1073e46-0f95-438a-a018-387c6756836a",
+  "displayName": "cancel",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Are you sure you want to cancel?" ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nAre you sure you want to cancel?\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Flow",
+    "name": "d2008469-7d8a-4041-825a-bc3e12f482f0"
+  } ]
+}

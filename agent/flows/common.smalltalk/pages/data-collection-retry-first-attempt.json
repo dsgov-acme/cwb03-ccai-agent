@@ -1,0 +1,28 @@
+{
+  "name": "11749625-c9db-4664-ae3a-edc5eb7a5052",
+  "displayName": "data-collection-retry-first-attempt",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "I'm sorry, I didn't get that. Please say that again." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nI'm sorry, I didn't get that. Please say that again.\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Flow",
+    "name": "969b2abf-42ff-442d-8b94-76ba67f5c462"
+  } ]
+}

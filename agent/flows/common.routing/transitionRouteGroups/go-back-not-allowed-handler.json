@@ -1,0 +1,22 @@
+{
+  "name": "4fa4d1c0-3769-473a-8c2d-69b8e28b5d09",
+  "displayName": "go-back-not-allowed-handler",
+  "transitionRoutes": [ {
+    "condition": "$session.params.data-collection-outcome = \"back\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "smalltalk",
+        "value": "go-back-not-allowed"
+      } ]
+    },
+    "targetFlow": "common.smalltalk",
+    "name": "d002d5d3-f3d6-4b54-87bc-6838b8fea388"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"back\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Current Page",
+    "name": "f3b82d5c-ba7a-465d-8fc5-315e55d540b1"
+  } ]
+}

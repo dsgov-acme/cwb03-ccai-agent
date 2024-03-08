@@ -1,0 +1,56 @@
+{
+  "name": "f18ffe13-756e-4442-91af-994e03904d20",
+  "displayName": "authenticate.main",
+  "transitionRoutes": [ {
+    "condition": "$session.params.data-collection-outcome = \"cancel\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "authentication-outcome",
+        "value": "cancel"
+      } ]
+    },
+    "targetPage": "END_FLOW_WITH_CANCELLATION",
+    "name": "bf467829-33ca-45b2-82cc-41cce57e0f9b"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"error\" AND $session.params.data-collection-attempt-count \u003c= $session.params.data-collection-attempts-allowed",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "smalltalk",
+        "value": "required-failed"
+      } ]
+    },
+    "targetFlow": "common.smalltalk",
+    "name": "53d41a0e-5909-400f-abdf-988890b518cf"
+  }, {
+    "condition": "$session.params.data-collection-attempt-count = $session.params.data-collection-attempts-allowed",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "flow.goodbye",
+    "name": "57c1bf83-76e1-4ea6-bee9-dd5b092536bd"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"back\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "smalltalk",
+        "value": "go-back-not-allowed"
+      } ]
+    },
+    "targetFlow": "common.smalltalk",
+    "name": "a2c26a9f-4f1c-4543-9810-e9445a442f62"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"back\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Current Page",
+    "name": "202c2939-bdde-414c-b58c-98f16f58b5ae"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"repeat\" OR $session.params.data-collection-outcome = \"error\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Current Page",
+    "name": "c7f1b4b5-de92-4669-b488-56742269f8b2"
+  } ]
+}

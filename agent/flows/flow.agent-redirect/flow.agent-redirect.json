@@ -1,0 +1,29 @@
+{
+  "name": "1508c8c1-70df-4cf5-8583-93f017b48412",
+  "displayName": "flow.agent-redirect",
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "agent-redirect-message",
+    "name": "545294a5-3877-420b-9e27-1728dc3896d7"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "c5135362-7f52-4971-ab9a-4b65c1ed76b9"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "388ce915-9d9a-49c8-8d35-4d01a32f5489"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  }
+}

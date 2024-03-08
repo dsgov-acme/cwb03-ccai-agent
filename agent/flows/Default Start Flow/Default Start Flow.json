@@ -1,0 +1,31 @@
+{
+  "name": "00000000-0000-0000-0000-000000000000",
+  "displayName": "Default Start Flow",
+  "description": "A start flow created along with the agent",
+  "transitionRoutes": [ {
+    "intent": "Default Welcome Intent",
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "welcome-message",
+    "name": "91eab81a-2ddb-44da-9bee-287d1f651422"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "94822c30-46e4-45b4-86fd-c48bee53e612"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "0f9584b8-fc66-4312-8682-d78633635ae6"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  }
+}

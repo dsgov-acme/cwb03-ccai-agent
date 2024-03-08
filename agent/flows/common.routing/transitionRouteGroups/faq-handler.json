@@ -1,0 +1,33 @@
+{
+  "name": "726d1700-9297-48a4-b873-bd9df83c810d",
+  "displayName": "faq-handler",
+  "transitionRoutes": [ {
+    "intent": "faq.ride-request",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "main.ride",
+    "name": "c8e9aea5-28c8-440b-8893-1181d711c130"
+  }, {
+    "intent": "faq.ride-update",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "main.ride",
+    "name": "32b1190c-a010-4a63-96b7-6e68dd442e94"
+  }, {
+    "intent": "faq.ride-cancel",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "main.ride",
+    "name": "ae2b23ae-358c-4d36-b2fb-c09e3d8ec3de"
+  }, {
+    "intent": "faq.ride-status",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "main.ride",
+    "name": "444326ad-3586-4c58-915d-3533423d16ee"
+  } ]
+}

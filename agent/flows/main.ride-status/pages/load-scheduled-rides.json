@@ -1,0 +1,34 @@
+{
+  "name": "e5acaa33-7935-4d9f-997e-9397563df52b",
+  "displayName": "load-scheduled-rides",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "dfcx-action",
+    "tag": "load-scheduled-rides"
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.scheduled-rides != null AND $sys.func.COUNT($flow.scheduled-rides) \u003e 0",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check-ride-days",
+    "name": "c74a9121-09f8-4798-9b53-9ef02d27f720"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "no-rides-scheduled",
+    "name": "cc35c1e2-305e-494f-ba1a-5bbceb390817"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "system-error",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+    
+    },
+    "name": "57144a29-f183-44dc-9d1d-a4ef1f6fa31a"
+  } ]
+}

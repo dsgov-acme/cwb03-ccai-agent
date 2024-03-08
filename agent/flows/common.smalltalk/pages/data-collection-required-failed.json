@@ -1,0 +1,28 @@
+{
+  "name": "bd7dd56b-6921-4151-a47a-3c9a4603331c",
+  "displayName": "data-collection-required-failed",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "You have exceeded the maximum number of allowed attempts and this field is required to continue. Therefore, your request has not been completed and your call is being terminated." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nYou have exceeded the maximum number of allowed attempts and this field is required to continue. Therefore, your request has not been completed and your call is being terminated.\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Flow",
+    "name": "b1c85571-fbd8-43c7-a0eb-e82c2c4e91aa"
+  } ]
+}

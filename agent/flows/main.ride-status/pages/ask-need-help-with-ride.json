@@ -1,0 +1,56 @@
+{
+  "name": "cc15952f-1dc7-4377-b744-67b8813a2adc",
+  "displayName": "ask-need-help-with-ride",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Do you need additional help with this ride from a representative?" ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nDo you need additional help with this ride from a representative?\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-type",
+        "value": "yes-no"
+      } ]
+    },
+    "targetFlow": "common.data-collection",
+    "name": "ed827732-0e5e-4c1c-987b-f4a5fb5331b9"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"success\" AND $session.params.data-collection-yes-no = \"yes\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "flow.agent-redirect",
+    "name": "4b603972-2b74-44fb-8baa-f723c5cafad8"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"success\" AND $session.params.data-collection-yes-no = \"no\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ask-check-another-status",
+    "name": "dc116d07-410f-4482-9ae8-df47e0fef9ec"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"help\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-yes-no-prompted",
+        "value": null
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "b3889f4b-ea67-4007-af67-dd54bec623df"
+  } ],
+  "transitionRouteGroups": [ "main.ride-status" ]
+}

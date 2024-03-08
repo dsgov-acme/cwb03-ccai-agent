@@ -1,0 +1,19 @@
+{
+  "name": "528d2481-1e82-4053-a048-9d01e1b4489f",
+  "displayName": "repeat-cancel-handler",
+  "transitionRoutes": [ {
+    "condition": "$session.params.data-collection-outcome = \"cancel\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "additional-help",
+    "name": "4da1d4ec-2460-4333-a3c6-3583b6b10ddb"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"repeat\" OR $session.params.data-collection-outcome = \"error\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Current Page",
+    "name": "508063ae-030f-415e-942e-9f36b6bdba54"
+  } ]
+}

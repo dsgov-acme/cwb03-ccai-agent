@@ -1,0 +1,28 @@
+{
+  "name": "cc2ab521-00ba-45a2-aca5-261d4bf5cb52",
+  "displayName": "re-ask-ride-date",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "I don't see any rides for that date." ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nI don't see any rides for that date.\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ask-ride-date",
+    "name": "593926c5-a68e-431f-ae9d-f2c2e87ded42"
+  } ]
+}

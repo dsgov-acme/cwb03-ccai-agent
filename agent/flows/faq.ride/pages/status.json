@@ -1,0 +1,55 @@
+{
+  "name": "e91bd000-f05c-421a-9fae-cc4271e86ef4",
+  "displayName": "status",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please confirm, do you want to hear details about a scheduled ride?" ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\nPlease confirm, do you want to hear details about a scheduled ride?\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-type",
+        "value": "yes-no"
+      } ]
+    },
+    "targetFlow": "common.data-collection",
+    "name": "3f431cf9-4106-4794-a114-086adba158db"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"success\" AND $session.params.data-collection-yes-no = \"yes\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "ride-request",
+        "value": "status"
+      }, {
+        "parameter": "ride-outcome",
+        "value": "success"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "e86da4a4-52ee-409c-9a92-fbdd701297a7"
+  }, {
+    "condition": "$session.params.data-collection-outcome = \"success\" AND $session.params.data-collection-yes-no = \"no\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "ride-outcome",
+        "value": "cancel"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "2b4617b8-969b-4958-bf87-7afd60f6002c"
+  } ],
+  "transitionRouteGroups": [ "faq.ride" ]
+}

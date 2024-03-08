@@ -1,0 +1,37 @@
+{
+  "name": "52823c2b-b340-4948-a737-3de2c8d28a55",
+  "displayName": "check-ride-date-for-rides",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.formatted-ride-date",
+      "value": "$sys.func.FORMAT_DATE($flow.ride-date, \"yyyyMMdd\")"
+    }, {
+      "parameter": "$flow.ride-filter",
+      "value": "$sys.func.CONCATENATE(\"$[?(@.formattedDate == '\", $flow.formatted-ride-date , \"')].rides\")"
+    }, {
+      "parameter": "$flow.filtered-rides",
+      "value": "$sys.func.FILTER(\"$flow.scheduled-rides\", $flow.ride-filter)"
+    }, {
+      "parameter": "$flow.filtered-rides",
+      "value": "$sys.func.GET($flow.filtered-rides, 0)"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$sys.func.COUNT($flow.filtered-rides) \u003e 0",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "rides-scheduled-on-date",
+    "name": "f0cf1af3-13a3-4f62-917d-cabda316b614"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "re-ask-ride-date",
+    "name": "7ccc6cd3-3373-4348-b059-74e47ee067df"
+  } ]
+}

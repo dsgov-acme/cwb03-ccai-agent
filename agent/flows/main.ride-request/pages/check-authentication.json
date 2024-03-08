@@ -1,0 +1,51 @@
+{
+  "name": "0728dc2f-b9c3-4902-8486-9f11be87b0f2",
+  "displayName": "check-authentication",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "authenticate.main",
+    "name": "11690e2e-7e9a-478b-b064-d5d1c2848a8e"
+  }, {
+    "condition": "$session.params.authentication-outcome = \"cancel\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "ride-outcome",
+        "value": "cancel"
+      } ]
+    },
+    "targetPage": "END_FLOW_WITH_CANCELLATION",
+    "name": "97a2b275-eb16-440a-b1c6-6b419437e4f8"
+  }, {
+    "condition": "$session.params.authentication-outcome = \"failure\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "ride-outcome",
+        "value": "error"
+      } ]
+    },
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "name": "957eb297-6280-41ef-8300-3a1fe92ef958"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "PLACEHOLDER: ride request..." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "ride-outcome",
+        "value": "success"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "a6931740-303e-451b-9faa-c772175c6f44"
+  } ]
+}

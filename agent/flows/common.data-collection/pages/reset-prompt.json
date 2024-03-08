@@ -1,0 +1,58 @@
+{
+  "name": "e132ebd1-13f6-409b-9d18-aa07f2f912b7",
+  "displayName": "reset-prompt",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.data-collection-type = \"rider-id\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-rider-id-prompted",
+        "value": null
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "76926f8c-82f3-437e-83d6-427b79ae9099"
+  }, {
+    "condition": "$session.params.data-collection-type = \"yes-no\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-yes-no-prompted",
+        "value": null
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "3c67ffe0-c69b-4c39-a467-c03940ddea9e"
+  }, {
+    "condition": "$session.params.data-collection-type = \"any\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-any-prompted",
+        "value": null
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "4a16800c-1417-492e-b8a3-31cb37b5a4a9"
+  }, {
+    "condition": "$session.params.data-collection-type = \"date\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-date-prompted",
+        "value": null
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "aa8ba4d3-6b05-4b50-84d5-e3ecac26a7ad"
+  }, {
+    "condition": "$session.params.data-collection-type = \"number\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "data-collection-number-prompted",
+        "value": null
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "f3da2a33-3bec-4495-af6a-d3013429e1e9"
+  } ]
+}

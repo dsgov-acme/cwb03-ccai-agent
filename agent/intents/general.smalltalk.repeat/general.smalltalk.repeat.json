@@ -1,0 +1,10 @@
+{
+  "name": "6a3cc1b9-37fb-4666-96b1-fe30531b0789",
+  "displayName": "general.smalltalk.repeat",
+  "parameters": [ {
+    "id": "any",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 8
+}

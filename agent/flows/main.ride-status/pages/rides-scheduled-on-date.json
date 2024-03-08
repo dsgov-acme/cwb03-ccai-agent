@@ -1,0 +1,25 @@
+{
+  "name": "685ebcc4-48d6-4ee1-a2bb-26ddcf324485",
+  "displayName": "rides-scheduled-on-date",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$sys.func.COUNT($flow.filtered-rides) \u003e 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "rides-scheduled-on-date-multiple",
+    "name": "01d7c70a-1d60-4aef-831d-7577b59dae9b"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.ride",
+        "value": "$sys.func.GET($flow.filtered-rides, 0)"
+      } ]
+    },
+    "targetPage": "rides-scheduled-on-date-single",
+    "name": "2f16471a-cd4c-4f12-b422-f79e56a2f402"
+  } ]
+}
